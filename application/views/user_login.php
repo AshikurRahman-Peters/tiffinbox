@@ -108,12 +108,12 @@
 											</div><!--/widget-main-->
 
 											<div class="toolbar clearfix">
-												<!--div>
+												<div>
 													<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
 														<i class="icon-arrow-left"></i>
 														I forgot my password
 													</a>
-												</div-->
+												</div>
 
 												<div>
 													<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">

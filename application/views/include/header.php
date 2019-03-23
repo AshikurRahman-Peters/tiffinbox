@@ -395,6 +395,12 @@
 							<span class="menu-text"> Student Attendance </span>
 						</a>
 					</li>
+					<li <?php echo ($this->uri->segment(1) =="att_report") ? 'class="active"':'';?> >
+						<a href="<?php echo base_url(); ?>att_report/index">
+							<i class="icon-group"></i>
+							<span class="menu-text">Attendance Report</span>
+						</a>
+					</li>
 					<li <?php echo (($this->uri->segment(1) =="employee") && (($this->uri->segment(2) =="departments") || ($this->uri->segment(2) =="createdepartment") || ($this->uri->segment(2) =="updatedepartment")))? 'class="active"':'';?>>
 						<a href="<?php echo base_url();?>employee/departments">
 							<i class="icon-sitemap green"></i>

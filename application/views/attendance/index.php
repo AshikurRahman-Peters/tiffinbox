@@ -89,7 +89,7 @@
 					<?php if(@$student):?>
 							<div class="row-fluid">
 								<div class="table-header">
-									Attendance of class <strong><?php echo $cls[$this->input->post('classId')];?></strong> on <strong><?php echo $this->input->post('date');?></strong> 
+									Attendance of class <strong><?php echo @$cls[$this->input->post('classId')];?></strong> on <strong><?php echo $this->input->post('att_date');?></strong> 
 								</div> 
 								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
 									<thead>
@@ -105,7 +105,7 @@
 										<?php 
 										echo form_open_multipart(base_url().'attendance/insert','class="form-horizontal"');
 										echo form_hidden('class', $this->input->post('classId')); 
-										echo form_hidden('date', date('Y-m-d', strtotime($this->input->post('date'))));  
+										echo form_hidden('att_date', date('Y-m-d', strtotime($this->input->post('att_date'))));  
 										foreach($student->result() as $items){
 											echo form_hidden('roll['.$items->StdRollNo.']');
 											echo '<tr><td>'.$items->StdRollNo.'</td><td>'.$items->StdName.'</td>
@@ -125,21 +125,21 @@
 </div><!--/.page-content-->
 <script>
 
-$( document ).ready(function() {
-	$(".add-section").change(function(){
-		//get secttion by ID in ajax;
-		var cls = $(this).val();
+// $( document ).ready(function() {
+// 	$(".add-section").change(function(){
+// 		//get secttion by ID in ajax;
+// 		var cls = $(this).val();
 		 
-		$.post( "<?php echo base_url();?>classroutin/getsectionBycId", { classId: cls })
-		  .done(function( data ) {
+// 		$.post( "<?php echo base_url();?>classroutin/getsectionBycId", { classId: cls })
+// 		  .done(function( data ) {
 		 	 
-			if(data != 0){
-				$("#section").html(data);	
-			} 
-		});
+// 			if(data != 0){
+// 				$("#section").html(data);	
+// 			} 
+// 		});
 	  
-	});
-}); 
+// 	});
+// }); 
 </script>
 
 <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>

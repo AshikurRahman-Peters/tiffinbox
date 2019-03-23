@@ -428,10 +428,14 @@ else if ( !function_exists("__autoload") ) {
    *
    * @param string $class
    */
-  function __autoload($class) {
-    DOMPDF_autoload($class);
+  // function __autoload($class) {
+  //   DOMPDF_autoload($class);
+
+  spl_autoload_register(function($class) {
+    include 'classes/' . $class . '.class.php';
+});
   }
-}
+
 
 // ### End of user-configurable options ###
 

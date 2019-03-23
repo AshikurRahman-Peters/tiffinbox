@@ -32,12 +32,12 @@ class Attendance extends CI_Controller {
 	public function insert(){
 		$roll = $this->input->post('roll');
 		$attendace = $this->input->post('attendance');
-		$date = $this->input->post('date');
-		$class = $this->input->post('class');
+		$date = $this->input->post('att_date');
+		$class = $this->input->post('classId');
 		foreach($roll as $key=>$value){
 			if(@$attendace[$key]){
 				$data = array(
-					'date'=>$date,
+					'att_date'=>$date,
 					'classId'=>$class,
 					'rollNo'=>$key,
 					'status'=>1
@@ -45,7 +45,7 @@ class Attendance extends CI_Controller {
 				$this->db->insert('attendance',$data);
 			}else{
 					$data = array(
-					'date'=>$date,
+					'att_date'=>$date,
 					'classId'=>$class,
 					'rollNo'=>$key,
 					'status'=>0

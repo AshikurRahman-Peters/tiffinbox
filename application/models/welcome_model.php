@@ -26,8 +26,7 @@ class Welcome_Model extends CI_Model {
 		$user_name = $data['user_name'];
 		$password = $data['password'];
 	 
-		$query = $this->db->get_where('user', array('user_name'=> $user_name, 'password'=>($password))); 
-		//put md5
+		$query = $this->db->get_where('user', array('user_name'=> $user_name, 'password'=>md5($password)));
 		
 		if($query->num_rows() > 0):
 			$is_logged = array();

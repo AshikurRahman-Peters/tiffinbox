@@ -122,7 +122,8 @@ class Students extends CI_Controller {
 		$this->pdf->load_html($html);
 		$this->pdf->render();
 		$this->pdf->stream('salesreport.pdf',array('compress'=>1,'Attachment'=>0));
-		//$this->pdf->stream("student.pdf");
+		
+		// $this->pdf->stream("student.pdf");
 	} 
 	public function getxl($cid=Null){
 		header('Content-Type: application/csv');
