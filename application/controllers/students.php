@@ -155,4 +155,35 @@ class Students extends CI_Controller {
 		} 
 		echo $content;
 	}
+	public function parents(){ 
+
+			$data['page_title'] = 'Students :: School management system';
+			$data['parents']= $this->students_model->getParentsDetails(); 
+			$this->load->view('include/header',$data);
+			$this->load->view('students/parents');
+			$this->load->view('include/footer');
+  }
+
+  public function parents_auth($id){
+  		if($this->input->post()){
+  			# update
+  			$insert_data = array(
+  				'parents_username'=>$this->input->post('parents_username'),
+  				'parents_password'=>md5($this->input->post('parents_password'))
+  			);
+
+  			if($this->db->update('studentdetails', $insert_data)){
+  				$this->session->set_flashdata('status_right', 'Successfully Update Parents Username and Password');	
+			 	redirect('students/parents'); 
+  			}
+
+  		}else{
+  			#create
+  			$data['parents']= $this->students_model->getStudentDetailsById($id); 
+					$this->load->view('include/header',$data);
+					$this->load->view('students/parents_auth');
+					$this->load->view('include/footer');
+  		}
+  			
+  }
 }	

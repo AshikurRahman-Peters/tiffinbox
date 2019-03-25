@@ -347,4 +347,12 @@ public function getStudentDetailsById($id){
 		$this->db->join('studentinfo', 'studentinfo.StdDetailsId=studentdetails.Id');
 		return $this->db->get_where('studentdetails', array('studentdetails.Id'=>$id));
 	}
+
+//parents 
+	public function getParentsDetails(){
+		 
+		return $this->db->get('studentdetails');
+	}
+
+	 
 }

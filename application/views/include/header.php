@@ -388,6 +388,12 @@
 							<span class="menu-text"> Student  </span>
 						</a>
 					</li>
+					<li <?php echo ($this->uri->segment(1) =="studentdetails") ? 'class="active"':'';?>>
+						<a href="<?php echo base_url(); ?>students/parents">
+						<i class="icon-group"></i>
+							<span class="menu-text"> Parents </span>
+						</a>
+					</li>
 					
 					<li <?php echo ($this->uri->segment(1) =="attendance") ? 'class="active"':'';?> >
 						<a href="<?php echo base_url(); ?>attendance/index">
@@ -438,10 +444,29 @@
 							<i class="icon-book"></i> Subject 
 						</a>
 					</li-->
+					<li <?php echo ($this->uri->segment(1) =="syllabus" )? 'class="active"':'';?>>
+						<a href="<?php echo base_url();?>syllabus/index">
+							<i class="icon-double-angle-right"></i>
+							Syllabus
+						</a>
+					</li>
 					<li <?php echo ($this->uri->segment(1) =="classroutin" && $this->uri->segment(2) =="index" )? 'class="active"':'';?>>
 						<a href="<?php echo base_url();?>classroutin/index">
 							<i class="icon-double-angle-right"></i>
 							Class Routin
+						</a>
+					</li>
+					<li <?php echo ($this->uri->segment(1) =="event")? 'class="active"':'';?>>
+						<a href="<?php echo base_url();?>event_calendar/index">
+							<i class="icon-double-angle-right"></i>
+							Event Calendar 
+						</a>
+					</li>
+
+					<li <?php echo ($this->uri->segment(1) =="sms")? 'class="active"':'';?>>
+						<a href="<?php echo base_url();?>sms/index">
+							<i class="icon-edit"></i>
+							SMS 
 						</a>
 					</li>
 							
